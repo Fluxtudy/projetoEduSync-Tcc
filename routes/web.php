@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\AuthController;
 
+Route::get('/inicio', function () {
+    return view('welcome');
+})->name('home');
+
 Route::get('/register/aluno', [AuthController::class, 'showRegisterAluno'])->name('register.aluno.form');
 Route::post('/register/aluno', [AuthController::class, 'registerAluno'])->name('register.aluno');
 

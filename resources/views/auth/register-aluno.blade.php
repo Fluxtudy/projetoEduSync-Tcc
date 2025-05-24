@@ -7,9 +7,11 @@
     <h2 class="text-2xl font-bold mb-6 text-center">Cadastro de Aluno</h2>
 
     <form method="POST" action="{{ route('register.aluno') }}" class="space-y-4">
+    <!-- <form action="{{ route('register.aluno') }}" method="POST"> -->
         @csrf
         <input type="text" name="nome" placeholder="Nome" class="w-full px-4 py-2 border rounded" required>
         <input type="email" name="email" placeholder="E-mail" class="w-full px-4 py-2 border rounded" required>
+        <input type="tel" name="telefone" placeholder="Telefone" class="w-full px-4 py-2 border rounded" required>
         <input type="password" name="password" placeholder="Senha" class="w-full px-4 py-2 border rounded" required>
         <input type="password" name="password_confirmation" placeholder="Confirmar senha" class="w-full px-4 py-2 border rounded" required>
         <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">

@@ -10,6 +10,8 @@
         @csrf
         <input type="text" name="nome" placeholder="Nome" class="w-full px-4 py-2 border rounded" required>
         <input type="email" name="email" placeholder="E-mail" class="w-full px-4 py-2 border rounded" required>
+        <input type="tel" name="telefone" placeholder="Telefone" class="w-full px-4 py-2 border rounded" required>
+        <input type="text" name="preco_aula" placeholder="preco_aula" class="w-full px-4 py-2 border rounded" required>
         <input type="password" name="password" placeholder="Senha" class="w-full px-4 py-2 border rounded" required>
         <input type="password" name="password_confirmation" placeholder="Confirmar senha" class="w-full px-4 py-2 border rounded" required>
 

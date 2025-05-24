@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/inicio', function () {
     return view('welcome');
@@ -20,5 +21,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas protegidas
-Route::middleware(['auth', 'checkRole:aluno'])->get('/aluno/home', fn() => 'Bem-vindo aluno!');
-Route::middleware(['auth', 'checkRole:professor'])->get('/professor/home', fn() => 'Bem-vindo professor!');
+Route::middleware('web')->group(function () {
+   Route::get('/home/alunos', [AuthController::class, 'showHomeAlunos'])->name('inicio');
+});
+// Route::middleware(['auth', 'checkRole:aluno'])->get('/aluno/home', fn() => 'Bem-vindo aluno!');
+// Route::middleware(['auth', 'checkRole:professor'])->get('/professor/home', fn() => 'Bem-vindo professor!');

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\Aluno;
-use App\Models\Professor;
+use App\Models\Professores;
 
 class AuthController extends Controller
 {
@@ -19,15 +19,19 @@ class AuthController extends Controller
     // Registro de aluno
     public function registerAluno(Request $request)
     {
+        // dd($request->all());
+
         $request->validate([
             'nome' => 'required|string|max:255',
             'email' => 'required|email|unique:alunos,email',
+            'telefone' => 'required|string|max:11',
             'password' => 'required|string|confirmed|min:6',
         ]);
 
         $aluno = Aluno::create([
             'nome' => $request->nome,
             'email' => $request->email,
+            'telefone' => $request->telefone,
             'senha' => Hash::make($request->password),
         ]);
 
@@ -38,7 +42,7 @@ class AuthController extends Controller
             'user_role' => 'aluno',
         ]);
 
-        return redirect('/aluno/home');
+        return redirect('login');
     }
 
     // Formulario de registro de professor
@@ -53,13 +57,17 @@ class AuthController extends Controller
         $request->validate([
             'nome' => 'required|string|max:255',
             'email' => 'required|email|unique:professores,email',
+            'telefone' => 'required|string|max:11',
+            'preco_aula' => 'required|string|max:11',
             'password' => 'required|string|confirmed|min:6',
         ]);
 
-        $professor = Professor::create([
+        $professor = Professores::create([
             'nome' => $request->nome,
             'email' => $request->email,
-            'senha' => Hash::make($request->password),
+            'telefone' => $request->telefone,
+            'preco_aula' =>$request->preco_aula,
+            'password' => Hash::make($request->password),
         ]);
 
         session([
@@ -93,19 +101,21 @@ class AuthController extends Controller
                 'user_nome' => $aluno->nome,
                 'user_role' => 'aluno',
             ]);
-            return redirect('/aluno/home');
+            return redirect('/inicio');
         }
 
+        
+
         // Verifica se é professor
-        $professor = Professor::where('email', $request->email)->first();
-        if ($professor && Hash::check($request->password, $professor->senha)) {
-            session([
-                'user_id' => $professor->id,
-                'user_nome' => $professor->nome,
-                'user_role' => 'professor',
-            ]);
-            return redirect('/professor/home');
-        }
+        // $professor = Professor::where('email', $request->email)->first();
+        // if ($professor && Hash::check($request->password, $professor->senha)) {
+        //     session([
+        //         'user_id' => $professor->id,
+        //         'user_nome' => $professor->nome,
+        //         'user_role' => 'professor',
+        //     ]);
+        //     return redirect('/professor/home');
+        // }
 
         return back()->withErrors([
             'email' => 'Credenciais inválidas',

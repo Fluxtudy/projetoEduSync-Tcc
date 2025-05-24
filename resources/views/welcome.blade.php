@@ -80,11 +80,11 @@
                 Conectando alunos aos melhores especialistas em tecnologia
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="cadastro-aluno.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full btn-glow transition-all duration-300 transform hover:scale-105">
+                <a href="login" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full btn-glow transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-user-graduate mr-2"></i> Quero Aprender
                 </a>
-                <a href="cadastro-professor.html" class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-full btn-glow transition-all duration-300 transform hover:scale-105">
-                    <i class="fas fa-chalkboard-teacher mr-2"></i> Sou Tutor
+                <a href="login" class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-full btn-glow transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-chalkboard-teacher mr-2"></i> Quero ensinar
                 </a>
             </div>
             <div class="mt-16 animate-bounce">

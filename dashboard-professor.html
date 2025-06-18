@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduSync - Dashboard do Professor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-gray-50 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-blue-600 flex items-center">
+        <i class="fas fa-laptop-code mr-2"></i> EduSync
+      </a>
+      <div class="space-x-4">
+        <a href="#" class="text-gray-700 hover:text-blue-500">Início</a>
+        <a href="#" class="text-gray-700 hover:text-blue-500">Perfil</a>
+        <a href="#" class="text-gray-700 hover:text-blue-500">Sair</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard -->
+  <section class="container mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Olá, Prof. João! 👋</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Próximas Aulas -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-4">📅 Minha Agenda</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li><strong>Python básico</strong> - Ana (Hoje, 19h)</li>
+          <li><strong>HTML & CSS</strong> - Lucas (Amanhã, 14h)</li>
+          <li><strong>Lógica de programação</strong> - Beatriz (Quinta, 10h)</li>
+        </ul>
+      </div>
+
+      <!-- Mensagens e Pedidos -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-4">💬 Novos Pedidos</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li>Pedido de aula: <strong>JavaScript</strong> - Felipe</li>
+          <li>Nova mensagem de <strong>Mariana</strong></li>
+        </ul>
+      </div>
+
+      <!-- Especialidades -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h2 class="text-xl font-semibold mb-4">🧑‍💻 Suas Especialidades</h2>
+        <ul class="space-y-2 text-gray-700">
+          <li><i class="fas fa-check text-green-500 mr-2"></i> Front-end (HTML, CSS, JS)</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i> Python e lógica</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i> Git e GitHub</li>
+        </ul>
+        <button class="mt-4 text-blue-500 hover:underline">Editar Especialidades</button>
+      </div>
+
+      <!-- Avaliações -->
+      <div class="bg-white p-6 rounded-xl shadow col-span-1 lg:col-span-2">
+        <h2 class="text-xl font-semibold mb-4">⭐ Avaliações Recentes</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li>Lucas: "Explicou muito bem sobre funções. Nota 10!" ⭐⭐⭐⭐⭐</li>
+          <li>Carla: "Ajudou muito com lógica de programação." ⭐⭐⭐⭐☆</li>
+        </ul>
+      </div>
+
+      <!-- Seus Alunos -->
+      <div class="bg-white p-6 rounded-xl shadow col-span-1 lg:col-span-2">
+        <h2 class="text-xl font-semibold mb-4">👥 Seus Alunos</h2>
+        <ul class="flex flex-wrap gap-4">
+          <li class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">Ana</li>
+          <li class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">Lucas</li>
+          <li class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">Beatriz</li>
+          <li class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">Felipe</li>
+        </ul>
+      </div>
+
+      <!-- Ações Rápidas -->
+      <div class="bg-white p-6 rounded-xl shadow col-span-full text-center">
+        <h2 class="text-xl font-semibold mb-4">📎 Ações Rápidas</h2>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Cadastrar Aula</button>
+          <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">Enviar Material</button>
+          <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg">Editar Perfil</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

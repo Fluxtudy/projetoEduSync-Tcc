@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduSync - Catálogo de Professores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                              url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-[400px] flex items-center justify-center text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                Nosso <span class="text-green-400">Time de Professores</span>
+            </h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Conheça os profissionais que vão guiar seu aprendizado no mundo da tecnologia
+            </p>
+            
+                
+            </a>
+        </div>
+    </section>
+
+    <!-- Professores Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden p-8 md:p-10">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Catálogo de Professores</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- Professor 1 -->
+                    <div class="bg-white rounded-lg p-6 module-card transition-all duration-300 shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto do Professor" class="w-16 h-16 rounded-full mr-4 object-cover" />
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800">Carlos Silva</h4>
+                                <p class="text-green-600 text-sm">Especialista em Backend (Node.js)</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">
+                            8 anos de experiência em desenvolvimento de APIs RESTful e microsserviços escaláveis.
+                        </p>
+                        <a href="mailto:carlos@email.com" class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </a>
+                    </div>
+
+                    <!-- Professor 2 -->
+                    <div class="bg-white rounded-lg p-6 module-card transition-all duration-300 shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Foto da Professora" class="w-16 h-16 rounded-full mr-4 object-cover" />
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800">Juliana Costa</h4>
+                                <p class="text-green-600 text-sm">Especialista em DevOps & Cloud</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">
+                            10 anos em infraestrutura, com foco em AWS, Docker, CI/CD e escalabilidade em nuvem.
+                        </p>
+                        <a href="mailto:juliana@email.com" class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </a>
+                    </div>
+
+                    <!-- Professor 3 -->
+                    <div class="bg-white rounded-lg p-6 module-card transition-all duration-300 shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Foto do Professor" class="w-16 h-16 rounded-full mr-4 object-cover" />
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800">Fernando Almeida</h4>
+                                <p class="text-green-600 text-sm">Especialista em Python e APIs</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Professor com 6 anos de experiência em desenvolvimento com Django, Flask e FastAPI.
+                        </p>
+                        <a href="mailto:fernando@email.com" class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </a>
+                    </div>
+
+                    <!-- Professor 4 -->
+                    <div class="bg-white rounded-lg p-6 module-card transition-all duration-300 shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Foto da Professora" class="w-16 h-16 rounded-full mr-4 object-cover" />
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800">Aline Ribeiro</h4>
+                                <p class="text-green-600 text-sm">Especialista em Bancos de Dados</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">
+                            Atua há mais de 9 anos com PostgreSQL, MongoDB, Redis e modelagem de dados.
+                        </p>
+                        <a href="mailto:aline@email.com" class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full">
+                            <i class="fas fa-envelope mr-2"></i> Contatar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

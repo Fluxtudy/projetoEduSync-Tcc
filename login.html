@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSync - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .hero-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+    .btn-glow:hover {
+      box-shadow: 0 0 15px #3b82f6;
+    }
+    .input-group:focus-within label {
+      transform: translateY(-1.5rem) scale(0.85);
+      color: #3b82f6;
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-100">
+
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-[400px] flex items-center justify-center text-white">
+    <div class="text-center px-6">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Acesse sua <span class="text-blue-400">Conta</span>
+      </h1>
+      <p class="text-xl mb-4">Conecte-se ao seu universo particular de aprendizagem</p>
+    </div>
+  </section>
+
+  <!-- Login Form Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-6 max-w-3xl">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden p-8 md:p-10">
+        
+        <!-- Alternância: Aluno ou Professor -->
+        <div class="flex justify-center gap-6 mb-8">
+          <button id="btnProfessor" class="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-blue-600 transition">
+            Sou Professor
+          </button>
+          <button id="btnAluno" class="bg-gray-200 text-gray-800 px-6 py-2 rounded-lg font-semibold hover:bg-gray-300 transition">
+            Sou Aluno
+          </button>
+        </div>
+
+        <!-- Formulário de Login -->
+        <form id="formLogin" class="space-y-6">
+          <!-- Campo oculto com o tipo de usuário -->
+          <input type="hidden" id="tipoUsuario" name="tipoUsuario" value="professor" />
+
+          <!-- E-mail -->
+          <div class="input-group relative">
+            <input type="email" id="email" name="email" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 peer">
+            <label for="email" class="absolute left-4 top-3 bg-white px-1 text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
+              E-mail *
+            </label>
+          </div>
+
+          <!-- Senha -->
+          <div class="input-group relative">
+            <input type="password" id="senha" name="senha" required minlength="8"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 peer">
+            <label for="senha" class="absolute left-4 top-3 bg-white px-1 text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
+              Senha *
+            </label>
+            <button type="button" class="absolute right-4 top-3 text-gray-400 hover:text-gray-600" onclick="togglePassword('senha')">
+              <i class="far fa-eye"></i>
+            </button>
+          </div>
+
+          <!-- Entrar -->
+          <button type="submit"
+                  class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-lg btn-glow transition-all duration-300 transform hover:scale-[1.02]">
+            <i class="fas fa-sign-in-alt mr-2"></i> Entrar
+          </button>
+
+          <div class="flex justify-between text-sm text-gray-600 mt-2">
+            <a href="#" class="hover:underline text-blue-600">Esqueci minha senha</a>
+            <a href="#" class="hover:underline text-blue-600">Criar nova conta</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Alternância entre Professor e Aluno
+    const btnProfessor = document.getElementById("btnProfessor");
+    const btnAluno = document.getElementById("btnAluno");
+    const tipoUsuario = document.getElementById("tipoUsuario");
+
+    btnProfessor.addEventListener("click", () => {
+      tipoUsuario.value = "professor";
+      btnProfessor.classList.add("bg-blue-500", "text-white");
+      btnProfessor.classList.remove("bg-gray-200", "text-gray-800");
+      btnAluno.classList.add("bg-gray-200", "text-gray-800");
+      btnAluno.classList.remove("bg-blue-500", "text-white");
+    });
+
+    btnAluno.addEventListener("click", () => {
+      tipoUsuario.value = "aluno";
+      btnAluno.classList.add("bg-blue-500", "text-white");
+      btnAluno.classList.remove("bg-gray-200", "text-gray-800");
+      btnProfessor.classList.add("bg-gray-200", "text-gray-800");
+      btnProfessor.classList.remove("bg-blue-500", "text-white");
+    });
+
+    // Mostrar/ocultar senha
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      const icon = input.nextElementSibling.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('fa-eye', 'fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.replace('fa-eye-slash', 'fa-eye');
+      }
+    }
+
+    // Submissão do formulário
+    document.getElementById('formLogin').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const tipo = tipoUsuario.value;
+      alert(`Login como ${tipo.charAt(0).toUpperCase() + tipo.slice(1)} realizado com sucesso!`);
+      // Aqui você pode fazer o redirecionamento com base no tipo
+    });
+  </script>
+</body>
+</html>

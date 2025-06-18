@@ -1,9 +1,10 @@
 <?php
-
+use App\Http\Middleware;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\AlunoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\AuthAluno;
 
 // Rotas públicas
 Route::get('/', function () {
@@ -23,10 +24,9 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do Aluno
-Route::middleware(['auth', 'checkRole:aluno'])->prefix('aluno')->group(function () {
-    Route::get('/dashboard', [AlunoController::class, 'dashboard'])->name('aluno.dashboard');
-    Route::get('/cursos', [AlunoController::class, 'cursos'])->name('aluno.cursos');
-    Route::get('/professores/{curso}', [AlunoController::class, 'professores'])->name('aluno.professores');
+Route::middleware([AuthAluno::class])->group(function () {
+    Route::get('/aluno/inicio', [AlunoController::class, 'dashboard'])->name('aluno.dashboard');
+    Route::get('/professores/{curso}', [AlunoController::class, 'mostrarProfessores'])->name('aluno.professores');
 });
 
 // Rotas do Professor

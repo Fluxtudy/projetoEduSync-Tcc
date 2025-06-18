@@ -15,7 +15,7 @@ class AlunoController extends Controller
         'dados' => 'Ciência de Dados'
     ];
     
-    return view('aluno.dashboard', compact('cursos'));
+    return view('aluno.home');
 }
 
     public function mostrarProfessores($curso)

@@ -97,14 +97,14 @@ public function login(Request $request)
 
     
     $aluno = Aluno::where('email', $request->email)->first();
-    if ($aluno && Hash::check($request->password, $aluno->password)) {
-        session([
-            'user_id' => $aluno->id,
-            'user_nome' => $aluno->nome,
-            'user_role' => 'aluno',
-        ]);
-        return redirect()->route('aluno.dashboard');
-    }
+    if ($aluno && Hash::check($request->password, $aluno->senha)) {
+    session([
+        'user_id' => $aluno->id,
+        'user_nome' => $aluno->nome,
+        'user_role' => 'aluno',
+    ]);
+    return redirect()->route('aluno.dashboard');
+}
 
     
     $professor = Professores::where('email', $request->email)->first();

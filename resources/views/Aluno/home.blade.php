@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EduSync - Cursos de tecnologia com especialistas. Aprenda programação, design, ciência de dados e desenvolvimento web com professores qualificados.">
-    <meta property="og:title" content="EduSync - Aulas Particulares de Tecnologia">
-    <meta property="og:description" content="Conectando alunos aos melhores especialistas em tecnologia">
-    <meta property="og:image" content="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg">
-    <meta property="og:url" content="https://edusync.com.br">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="EduSync - Cursos de tecnologia com especialistas. Aprenda programação, design, ciência de dados e desenvolvimento web com professores qualificados." />
+    <meta property="og:title" content="EduSync - Aulas Particulares de Tecnologia" />
+    <meta property="og:description" content="Conectando alunos aos melhores especialistas em tecnologia" />
+    <meta property="og:image" content="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg" />
+    <meta property="og:url" content="#" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>EduSync - Aulas Particulares de Tecnologia</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         .hero-bg {
             background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%), 
@@ -36,6 +36,9 @@
             z-index: 50;
             backdrop-filter: blur(10px);
         }
+
+</style>
+
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -50,10 +53,10 @@
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                <a href="{{ route('home') }}" class="text-gray-700 hover:text-blue-500 transition">Home</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-500 transition">Cursos</a>
-                    <a href="{{ route('register.aluno') }}" class="text-gray-700 hover:text-blue-500 transition">Aluno</a>
-                    <a href="{{ route('register.professor') }}" class="text-gray-700 hover:text-blue-500 transition">Professor</a>
+                    <a href="index.html" class="text-gray-700 hover:text-blue-500 transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-500 transition">Sobre</a>
+                    <a href="cadastro-alunos.html" class="text-gray-700 hover:text-blue-500 transition">Aluno</a>
+                    <a href="cadastro-professor.html" class="text-gray-700 hover:text-blue-500 transition">Professor</a>
                     <div class="relative">
                         <select class="appearance-none bg-transparent border-0 text-gray-700 focus:outline-none">
                             <option value="pt">🇧🇷 Português</option>
@@ -62,7 +65,7 @@
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button class="text-gray-700 focus:outline-none">
+                    <button class="text-gray-700 focus:outline-none" aria-label="Menu" aria-expanded="false" id="mobile-menu-button">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -70,7 +73,7 @@
         </div>
     </nav>
 
-    
+    <!-- Hero Section -->
     <section class="hero-bg min-h-[90vh] flex items-center justify-center text-white animate-fade-in">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-pulse">
@@ -80,62 +83,58 @@
                 Conectando alunos aos melhores especialistas em tecnologia
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="login" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full btn-glow transition-all duration-300 transform hover:scale-105">
+                <a href="cadastro-alunos.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full btn-glow transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-user-graduate mr-2"></i> Quero Aprender
                 </a>
-                <a href="login" class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-full btn-glow transition-all duration-300 transform hover:scale-105">
+                <a href="cadastro-professor.html" class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-full btn-glow transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-chalkboard-teacher mr-2"></i> Quero ensinar
                 </a>
             </div>
             <div class="mt-16 animate-bounce">
-                <a href="#services" class="text-white text-2xl">
+                <a href="#about" class="text-white text-2xl">
                     <i class="fas fa-chevron-down"></i>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Sessão Missão e História -->
+<section id="about" class="relative py-20 text-white">
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-800 via-indigo-900 to-purple-900 opacity-90 z-0"></div>
+  <div class="relative z-10 container mx-auto px-6 max-w-6xl">
+    <h2 class="text-4xl font-bold text-center mb-12">Nossa Missão e História</h2>
     
-    <section id="services" class="py-20 bg-gradient-to-r from-blue-500 to-purple-600">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-white mb-12">Áreas de Ensino EduSync</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all hover:scale-105">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <i class="fas fa-code text-blue-500 text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Programação</h3>
-                        <p class="text-gray-600">Python, JavaScript, Java e mais</p>
-                    </div>
-                </div>
-                
-                
-                <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all hover:scale-105">
-                    <div class="h-48 bg-purple-100 flex items-center justify-center">
-                        <i class="fas fa-paint-brush text-purple-500 text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Design</h3>
-                        <p class="text-gray-600">UI/UX, Figma, Photoshop</p>
-                    </div>
-                </div>
-                
-                
-                <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all hover:scale-105">
-                    <div class="h-48 bg-green-100 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-green-500 text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Ciência de Dados</h3>
-                        <p class="text-gray-600">Machine Learning, Análise de Dados</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="mb-12 space-y-8 text-lg leading-relaxed text-gray-100">
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-blue-400">Missão</h3>
+        <p>
+          Na EduSync, nossa missão é democratizar o acesso ao conhecimento tecnológico,
+          conectando alunos apaixonados a professores qualificados e dedicados.
+          Acreditamos que a educação de qualidade transforma vidas e impulsiona o futuro.
+          Por isso, buscamos sempre oferecer uma experiência de aprendizado inovadora, prática e personalizada.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold mb-4 text-blue-400">Nossa História</h3>
+        <p>
+          Fundada em 2023, a EduSync nasceu da visão de criar uma plataforma que aproximasse
+          especialistas em tecnologia de estudantes de todas as idades e níveis.
+          Desde então, temos crescido com o compromisso de facilitar o aprendizado,
+          fomentar comunidades e contribuir para o desenvolvimento profissional e pessoal de nossos usuários.
+        </p>
+      </div>
+    </div>
 
+    <div class="text-center">
+      <a href="catalogo-professores.html"
+         class="inline-block bg-white text-blue-600 font-bold py-4 px-8 rounded-full shadow-lg hover:bg-blue-100 transition transform hover:scale-105">
+        Conhecer nosso time de professores
+      </a>
+    </div>
+  </div>
+</section>
+
+\
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6">
@@ -154,8 +153,8 @@
                     <h3 class="text-xl font-bold mb-4">Links Rápidos</h3>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white">Cursos</a></li>
-                        <li><a href="cadastro-aluno.html" class="text-gray-400 hover:text-white">Cadastro Aluno</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Sobre</a></li>
+                        <li><a href="cadastro-alunos.html" class="text-gray-400 hover:text-white">Cadastro Aluno</a></li>
                         <li><a href="cadastro-professor.html" class="text-gray-400 hover:text-white">Cadastro Professor</a></li>
                     </ul>
                 </div>
@@ -171,8 +170,8 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">Newsletter</h3>
                     <p class="text-gray-400 mb-4">Assine para receber atualizações sobre novos cursos.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Seu email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                    <form class="flex" id="newsletter-form">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800" required aria-required="true" />
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-r-lg">
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -185,19 +184,41 @@
         </div>
     </footer>
 
-    
+    <!-- Back to Top Button -->
     <a href="#" class="fixed bottom-6 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    
+    <!-- Scripts -->
     <script>
-        
-        document.querySelector('.md\\:hidden button').addEventListener('click', function() {
-            
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'md:hidden hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-4 px-6';
+        mobileMenu.innerHTML = `
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-500">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-500">Sobre</a>
+            <a href="cadastro-alunos.html" class="block py-2 text-gray-700 hover:text-blue-500">Aluno</a>
+            <a href="cadastro-professor.html" class="block py-2 text-gray-700 hover:text-blue-500">Professor</a>
+        `;
+        document.body.appendChild(mobileMenu);
+
+        mobileMenuButton.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
         });
 
-        
+        // Newsletter form handling
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            // Aqui você enviaria o email para o backend
+            alert('Obrigado por se inscrever! Entraremos em contato em breve.');
+            this.reset();
+        });
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

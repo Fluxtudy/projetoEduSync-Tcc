@@ -127,5 +127,9 @@ public function login(Request $request)
         'login' => 'Credenciais inválidas',
     ]);
 }
-
+public function logout(Request $request)
+{
+    $request->session()->flush(); // Remove todos os dados da sessão
+    return redirect('/login')->with('success', 'Logout realizado com sucesso!');
+}
 }

@@ -25,8 +25,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do Aluno
 Route::middleware([AuthAluno::class])->group(function () {
-    Route::get('/aluno/inicio', [AlunoController::class, 'dashboard'])->name('aluno.dashboard');
+    Route::get('/aluno/cartalogo', [AlunoController::class, 'dashboard'])->name('aluno.dashboard');
     Route::get('/professores/{curso}', [AlunoController::class, 'mostrarProfessores'])->name('aluno.professores');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 // Rotas do Professor

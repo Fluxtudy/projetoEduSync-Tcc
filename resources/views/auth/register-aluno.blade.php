@@ -49,11 +49,12 @@
                     
                     <!-- Nome Completo -->
                     <div class="input-group relative">
-                        <input type="text" id="nome" name="nome" required 
+                        <p>Nome completo</p>
+                        <input placeholder = "Nome completo" type="text" id="nome" name="nome" required 
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
-                        <label for="nome" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
+                        <!-- <label for="nome" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
                             Nome Completo *
-                        </label>
+                        </label> -->
                     </div>
 
                     <!-- Email -->

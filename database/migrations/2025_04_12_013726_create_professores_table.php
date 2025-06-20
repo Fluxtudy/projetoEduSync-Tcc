@@ -16,8 +16,12 @@ return new class extends Migration
             $table->string('nome');
             $table->string('telefone');
             $table->string('email')->unique();
-            $table->decimal('preco_aula', 8, 2);
+            $table->string('senha');
             $table->text('descricao')->nullable();
+            $table->string('area_atuacao');
+            $table->string('portfolio');
+            $table->string('curriculo')->nullable();
+            $table->string('github')->nullable();
             $table->timestamps();
         });
     }

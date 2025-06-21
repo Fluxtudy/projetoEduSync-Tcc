@@ -53,21 +53,33 @@ class AuthController extends Controller
     
    public function registerProfessor(Request $request)
 {
-    $request->validate([
+    $validated = $request->validate([
         'nome' => 'required|string|max:255',
         'email' => 'required|email|unique:professores,email',
-        'telefone' => 'required|string|max:20', 
-        'preco_aula' => 'required|numeric|min:0', 
-        'password' => 'required|string|confirmed|min:8',
+        'senha' => 'required|string|confirmed|min:8',
+        'telefone' => 'required|string|max:20',
+        'area' => 'required|string|max:255',
+        'experiencia' => 'required|string|max:255',
+        'portfolio' => 'nullable|url|max:255',
+        'cv' => 'nullable|file|mimes:pdf|max:2048', 
     ]);
 
+    // Upload do currículo, se enviado
+    $curriculoPath = null;
+    if ($request->hasFile('cv')) { 
+        $curriculoPath = $request->file('cv')->store('curriculos', 'public');
+    }
+
+    // Criação do professor
     $professor = Professores::create([
-        'nome' => $request->nome,
-        'email' => $request->email,
-        'telefone' => $request->telefone,
-        'preco_aula' => $request->preco_aula,
-        'password' => Hash::make($request->password),
-        'perfil_completo' => false 
+        'nome' => $validated['nome'],
+        'email' => $validated['email'],
+        'senha' => bcrypt($validated['senha']),
+        'telefone' => $validated['telefone'],
+        'area_atuacao' => $validated['area'], 
+        'experiencia' => $validated['experiencia'],
+        'portfolio' => $validated['portfolio'] ?? null,
+        'curriculo' => $curriculoPath,
     ]);
 
     session([
@@ -76,9 +88,7 @@ class AuthController extends Controller
         'user_role' => 'professor',
     ]);
 
-
-    
-        return redirect()->route('professor.perfil');
+    return redirect()->route('professor.perfil')->with('success', 'Cadastro realizado com sucesso!');
 }
 
    
@@ -108,7 +118,7 @@ public function login(Request $request)
 
     
     $professor = Professores::where('email', $request->email)->first();
-    if ($professor && Hash::check($request->password, $professor->password)) {
+    if ($professor && Hash::check($request->password, $professor->senha)) {
         session([
             'user_id' => $professor->id,
             'user_nome' => $professor->nome,
@@ -129,7 +139,7 @@ public function login(Request $request)
 }
 public function logout(Request $request)
 {
-    $request->session()->flush(); // Remove todos os dados da sessão
-    return redirect('/login')->with('success', 'Logout realizado com sucesso!');
+    $request->session()->flush(); 
+    return redirect('/login')->with('success', 'Logout realizado com sucesso!');
 }
 }

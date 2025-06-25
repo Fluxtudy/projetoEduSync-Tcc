@@ -26,14 +26,9 @@
   <!-- Hero Section -->
         <section class="hero-bg min-h-[300px] flex items-center justify-center text-white">
         <div class="container mx-auto px-6 text-center">
-            <div class="relative inline-block">
-            <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="w-24 h-24 rounded-full border-4 border-white mx-auto">
-            <button type="button" title="Alterar foto" class="absolute bottom-0 right-0 bg-white text-blue-500 p-1 rounded-full shadow hover:bg-blue-100 transition">
-                <i class="fas fa-pen text-sm"></i>
-            </button>
-
-            </div>
-            <h1 class="text-4xl font-bold mt-4">Olá, {{ Auth::guard('aluno')->user()->nome }}</h1>
+           <h1 class="text-4xl md:text-5xl font-bold"> 
+           Olá, <span class="text-blue-400"> {{ Auth::guard('aluno')->user()->nome }}</span>
+           </h1>
         </div>
         </section>
 

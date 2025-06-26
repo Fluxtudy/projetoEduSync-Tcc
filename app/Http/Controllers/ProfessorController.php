@@ -73,8 +73,10 @@ class ProfessorController extends Controller
     $validated = $request->validate([
         'nome' => 'required|string|max:255',
         'email' => 'required|email|max:255|unique:professores,email,' . $professor->id,
+        'telefone' => 'nullable|string|max:20',
         'area_atuacao' => 'nullable|string|max:255',
-        'anos_experiencia' => 'nullable|integer|min:0',
+        'descricao' =>'nullable|string|max:3000',
+        'anos_experiencia' => 'nullable|string|integer|min:1',
         'portfolio' => 'nullable|url|max:255',
     ]);
 

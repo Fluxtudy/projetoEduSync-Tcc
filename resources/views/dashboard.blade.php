@@ -1,3 +1,5 @@
+@extends('layouts.footer')
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -80,22 +82,46 @@
     </div>
 </div>
 
-<!-- Área de Ensino -->
+<!-- Telefone -->
 <div class="w-full flex flex-col border-b border-gray-300 py-2">
-    <label for="area" class="mb-1 text-gray-700 font-semibold">Área de Ensino</label>
+    <label for="telefone" class="mb-1 text-gray-700 font-semibold">Telefone:</label>
     <div class="flex items-center">
-        <input type="text" id="area" name="area" class="flex-1 bg-transparent input-editable px-2 py-1" value="{{ old('area', $professor->area_atuacao) }}" >
+        <input type="text" name="telefone" id="telefone" class="flex-1 bg-transparent input-editable px-2 py-1" value="{{ old('telefone', $professor->telefone) }}">
         <button class="ml-2 text-gray-500 hover:text-red-500" onclick="toggleEdit(this)">
             <i class="fas fa-edit"></i>
         </button>
     </div>
 </div>
 
-<!-- Anos de Experiência -->
-<div class="w-full flex flex-col border-b border-gray-300 py-2">
-    <label for="anos_experiencia" class="mb-1 text-gray-700 font-semibold">Anos de Experiência</label>
+                    <div class="w-full flex flex-col border-b border-gray-300 py-2">
+    <label for="area_atuacao" class="mb-1 text-gray-700 font-semibold">Área de Ensino *</label>
+    <select name="area_atuacao" id="area_atuacao" class="mb-1 text-gray-700 font-semibold">
+        <option value="" disabled {{ old('area_atuacao', $professor->area_atuacao) ? '' : 'selected' }}>Selecione sua especialização</option>
+        <option value="programacao" {{ old('area_atuacao', $professor->area_atuacao) == 'programacao' ? 'selected' : '' }}>Programação</option>
+        <option value="design" {{ old('area_atuacao', $professor->area_atuacao) == 'design' ? 'selected' : '' }}>Design</option>
+        <option value="ciencia de dados" {{ old('area_atuacao', $professor->area_atuacao) == 'ciencia de dados' ? 'selected' : '' }}>Ciência de Dados</option>
+    </select>
+
+    @error('area_atuacao')
+        <span class="text-red-500 text-sm">{{ $message }}</span>
+    @enderror
+</div>
+<!-- Área de Ensino -->
+<!-- <div class="w-full flex flex-col border-b border-gray-300 py-2">
+    <label for="area" class="mb-1 text-gray-700 font-semibold">Área de Ensino</label>
     <div class="flex items-center">
-        <input type="number" id="anos_experiencia" name="anos_experiencia" class="flex-1 bg-transparent input-editable px-2 py-1" value="{{ old('anos_experiencia', $professor->anos_experiencia ?? '') }}">
+        <input type="text" id="area_atuacao" name="area_atuacao" class="flex-1 bg-transparent input-editable px-2 py-1" value="{{ old('area_atuacao', $professor->area_atuacao) }}" >
+        <button class="ml-2 text-gray-500 hover:text-red-500" onclick="toggleEdit(this)">
+            <i class="fas fa-edit"></i>
+        </button>
+    </div>
+</div> -->
+
+<!-- Descrição -->
+<div class="w-full flex flex-col border-b border-gray-300 py-2">
+    <label for="descricao" class="mb-1 text-gray-700 font-semibold">Descrição</label>
+    <div class="flex items-center">
+        <input type="text" id="descricao" name="descricao" class="flex-1 bg-transparent input-editable px-2 py-1" value="{{ old('descricao', $professor->descricao) }}"  >
         <button class="ml-2 text-gray-500 hover:text-red-500" onclick="toggleEdit(this)">
             <i class="fas fa-edit"></i>
         </button>

@@ -48,40 +48,30 @@
                     @csrf
                     
                     <!-- Nome Completo -->
-                    <div class="input-group relative">
-                        <p>Nome completo</p>
+                    <div class="input-group relative">                        
                         <input placeholder = "Nome completo" type="text" id="nome" name="nome" required 
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
-                        <!-- <label for="nome" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
-                            Nome Completo *
-                        </label> -->
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">                        
                     </div>
 
                     <!-- Email -->
                     <div class="input-group relative">
-                        <input type="email" id="email" name="email" required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
-                        <label for="email" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
-                            E-mail *
-                        </label>
+                        <input placeholder = "Email" type="email" id="email" name="email" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
+                        
                     </div>
 
                     <!-- Telefone -->
                     <div class="input-group relative">
-                        <input type="tel" id="telefone" name="telefone" required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
-                        <label for="telefone" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
-                            Telefone *
-                        </label>
+                        <input placeholder="Telefone" type="tel" id="telefone" name="telefone" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
+                        
                     </div>
 
                     <!-- Senha -->
                     <div class="input-group relative">
-                        <input type="password" id="password" name="password" required minlength="8"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
-                        <label for="password" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
-                            Senha (mínimo 8 caracteres) *
-                        </label>
+                        <input placeholder="Senha (mínimo 8 caracteres)" type="password" id="password" name="password" required minlength="8"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
+                        
                         <button type="button" class="absolute right-4 top-3 text-gray-400 hover:text-gray-600" onclick="togglePassword('password')">
                             <i class="far fa-eye"></i>
                         </button>
@@ -89,11 +79,8 @@
 
                     <!-- Confirmar Senha -->
                     <div class="input-group relative">
-                        <input type="password" id="password_confirmation" name="password_confirmation" required minlength="8"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
-                        <label for="password_confirmation" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
-                            Confirmar Senha *
-                        </label>
+                        <input placeholder="Confirmar Senha" type="password" id="password_confirmation" name="password_confirmation" required minlength="8"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">                       
                         <button type="button" class="absolute right-4 top-3 text-gray-400 hover:text-gray-600" onclick="togglePassword('password_confirmation')">
                             <i class="far fa-eye"></i>
                         </button>

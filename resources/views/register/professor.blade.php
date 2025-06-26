@@ -45,12 +45,9 @@
 
                     <!-- Nome Completo -->
                     <div class="input-group relative">
-                        <input type="text" id="nome" name="nome" required 
+                        <input placeholder="Nome Completo" type="text" id="nome" name="nome" required 
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 peer"
-                               value="{{ old('nome') }}">
-                        <label for="nome" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-red-500">
-                            Nome Completo *
-                        </label>
+                               value="{{ old('nome') }}">                        
                         @error('nome')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
@@ -58,12 +55,9 @@
 
                     <!-- Email -->
                     <div class="input-group relative">
-                        <input type="email" id="email" name="email" required
+                        <input placeholder="E-mail" type="email" id="email" name="email" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 peer"
                                value="{{ old('email') }}">
-                        <label for="email" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-red-500">
-                            E-mail *
-                        </label>
                         @error('email')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
@@ -71,28 +65,20 @@
 
                      <!-- Telefone -->
                     <div class="input-group relative">
-                        <input type="tel" id="telefone" name="telefone" required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
-                        <label for="telefone" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
-                            Telefone *
-                        </label>
+                        <input placeholder="Telefone" type="tel" id="telefone" name="telefone" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">                        
                     </div>
 
                     <div class="input-group relative">
-                        <input type="text" id="descricao" name="descricao" required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">
-                        <label for="descricao" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-blue-500">
-                            Descrição *
-                        </label>
+                        <input placeholder="Descrição" type="text" id="descricao" name="descricao" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 peer">                        
                     </div>
 
                     <!-- Senha -->
                     <div class="input-group relative">
-                        <input type="password" id="password" name="password" required minlength="8"
+                        <input placeholder="Senha (mínimo 8 caracteres)" type="password" id="password" name="password" required minlength="8"
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 peer">
-                        <label for="password" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-red-500">
-                            Senha (mínimo 8 caracteres) *
-                        </label>
+                        
                         <button type="button" class="absolute right-4 top-3 text-gray-400 hover:text-gray-600" onclick="togglePassword('password')">
                             <i class="far fa-eye"></i>
                         </button>
@@ -103,11 +89,8 @@
 
                     <!-- Confirmar Senha -->
                     <div class="input-group relative">
-                        <input type="password" id="password_confirmation" name="password_confirmation" required minlength="8"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 peer">
-                        <label for="password_confirmation" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-red-500">
-                            Confirmar Senha *
-                        </label>
+                        <input placeholder="Confirmar Senha" type="password" id="password_confirmation" name="password_confirmation" required minlength="8"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 peer">                        
                     </div>
 
                     <!-- Área de Ensino -->
@@ -117,7 +100,7 @@
                             <option value="" disabled selected>Selecione sua especialização</option>
                             <option value="programacao" {{ old('area') == 'programacao' ? 'selected' : '' }}>Programação</option>
                             <option value="design" {{ old('area') == 'design' ? 'selected' : '' }}>Design</option>
-                            <option value="dados" {{ old('area') == 'dados' ? 'selected' : '' }}>Ciência de Dados</option>
+                            <option value="Ciencia de dados" {{ old('area') == 'ciencia de dados' ? 'selected' : '' }}>Ciência de Dados</option>
                         </select>
                         @error('area')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
@@ -125,7 +108,7 @@
                     </div>
 
                     <!-- Experiência -->
-                    <div class="space-y-2">
+                    <!-- <div class="space-y-2">
                         <label class="block text-gray-700 font-medium">Anos de Experiência *</label>
                         <input type="number" min="0" name="experiencia" 
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
@@ -133,16 +116,13 @@
                         @error('experiencia')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
-                    </div>
+                    </div> -->
 
                     <!-- Portfólio -->
                     <div class="input-group relative">
-                        <input type="url" id="portfolio" name="portfolio"
+                        <input placeholder="Link do Portfólio/GitHub (opcional)" type="url" id="portfolio" name="portfolio"
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 peer"
-                               value="{{ old('portfolio') }}">
-                        <label for="portfolio" class="absolute left-4 top-3 px-1 bg-white text-gray-500 transition-all duration-200 pointer-events-none peer-focus:text-red-500">
-                            Link do Portfólio/GitHub (opcional)
-                        </label>
+                               value="{{ old('portfolio') }}">                        
                         @error('portfolio')
                             <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror

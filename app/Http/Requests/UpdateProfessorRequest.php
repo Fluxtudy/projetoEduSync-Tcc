@@ -22,7 +22,15 @@ class UpdateProfessorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+           
+        'nome' => 'required|string',
+        'email' => 'required|email',
+        'telefone' => 'nullable|string|max:20',
+        'area_atuacao' => 'nullable|string',
+        'anos_experiencia' => 'nullable|string|integer',
+        'descricao' => 'nullable|string',
+        'portfolio' => 'nullable|url',
+    
         ];
     }
 }
